@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ .mainbox{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+}
+ .card{
+    padding:1%;
+    margin:1%;
+}
+</style>
+<body>
+    <form action="">
+        <input type="number" id="minVal"/>
+        <input type="number" id="maxVal"/>
+        <input type="button" class="submit" value="filter"/>
+</form>
+<div class="mainbox">
+<div class="card parent"data-value="3000">
+<img src="https://i.pinimg.com/564x/1b/63/33/1b633323568fbed13a0721f33a347d6f.jpg"height="300px;"width="300px;"/>
+<p>3000</p>
+</div>
+<div class="card parent"data-value="4000">
+    <img src="https://i.pinimg.com/564x/df/72/c7/df72c7c951232625457a99891029e5be.jpg"height="300px;"width="300px;"/>
+    <p>4000</p>
+    </div>
+    <div class="card parent"data-value="5000">
+        <img src="https://i.pinimg.com/564x/f1/bf/54/f1bf54636f1ce30a1fe4c55034140cd6.jpg"height="300px;"width="300px;"/>
+        <p>5000</p>
+        </div>
+        <div class="card parent"data-value="6000">
+            <img src="https://i.pinimg.com/564x/e4/f0/44/e4f044ade0afa864b95183a9c5732642.jpg"height="300px;"width="300px;"/>
+            <p>6000</p>
+        </div>
+            
+            <div class="card parent"data-value="5000">
+                <img src="https://i.pinimg.com/564x/13/a5/fe/13a5feb5bbce2032daec77a13a760cf1.jpg"height="300px;"width="300px;"/>
+                <p>5000</p>
+                </div>
+                <div class="card parent"data-value="7000">
+                    <img src="https://i.pinimg.com/564x/b1/f4/94/b1f494c4d4dbc10d1004e3e1bae76fa1.jpg"height="300px;"width="300px;"/>
+                    <p>7000</p>
+                    </div>
+                    <div class="card parent"data-value="6000">
+                        <img src="https://i.pinimg.com/736x/ac/5a/6a/ac5a6a2f2558e15c384b30307d79a280.jpg"height="300px;"width="300px;"/>
+                        <p>6000</p>
+                        </div>
+                        <div class="card parent"data-value="4000">
+                            <img src="https://i.pinimg.com/564x/b9/1a/f8/b91af8a6c780ece49c2ac569d8674c27.jpg"height="300px;"width="300px;"/>
+                            <p>4000</p>
+                            </div>
+
+</div>
+<script>
+ subBtn=document.querySelector('.submit');
+    let dataValue=document.querySelectorAll('.parent');
+    dataValue.forEach(function(Items){
+        subBtn.addEventListener('click',function(){
+            let min=document.getElementById("minVal").value;
+            let max=document.getElementById("maxVal").value;
+        minPI=parseInt(min);
+        maxPI=parseInt(max);
+        let dataItems=Items.getAttribute('data-value');
+        if(dataItems>=minPI && dataItems<=maxPI){
+            Items.style.display="block";
+        
+        }    
+        else{
+            Items.style.display="none";
+        }   
+      })
+    })
+
+
+</script>
+</body>
+</html>
