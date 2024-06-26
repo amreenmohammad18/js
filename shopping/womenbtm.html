@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" id="minVal"/>
+        <input type="number" id="maxVal"/>
+        <input type="button" class="submit" value="filter"/>
+</form>
+    <div class="mainbox display-inline-flex flex-nowrap">
+    <div class="row">
+        <div class="col-sm-3 parent" data-value="1100">
+        <div class="card" style="width:300px;padding-top:20px;">
+            <img src="https://i.pinimg.com/736x/6f/73/71/6f7371d3d19a79c483d36acf9e898e71.jpg" height=400px;"/>
+           <center><p class="box">500</p></center> 
+        </div></div>
+        <div class="col-sm-3 parent"data-value="2500">
+            <div class="card" style="width:300px;padding-top:20px;">
+            <img src="https://i.pinimg.com/736x/bf/9c/b6/bf9cb6cc3a0ad575663e6fd1c02a338e.jpg" height="400px;"/>
+            <center><p class="box">1000</p></center> 
+        </div></div>
+        <div class="col-sm-3 parent"data-value="4000">
+            <div class="card" style="width:300px;padding-top:20px;">
+            <img src="https://i.pinimg.com/736x/96/8b/a1/968ba1b3a6ffb7225cf4a32f601ebb16.jpg"height=400px;"/>
+            <center><p class="box">600</p></center>
+        </div></div>
+        <div class="col-sm-3 parent"data-value="5000">
+            <div class="card" style="width:300px;padding-top:20px;">
+            <img src="https://i.pinimg.com/564x/90/88/62/9088625baf63d66825f3aa7c44c66c21.jpg"height=400px;"/>
+            <center><p class="box">500</p></center>
+        </div></div>
+        <div class="row">
+            <div class="col-sm-3 parent" data-value="6000">
+                <div class="card" style="width:300px;padding-top:20px;">
+                    <img src="https://i.pinimg.com/564x/e2/cb/fd/e2cbfd3c730547aa5a36b8730cd03840.jpg" height=400px;"/>
+                   <center><p class="box">600</p></center> 
+               </div>
+            </div>
+                    <div class="col-sm-3 parent" data-value="5500">
+                        <div class="card" style="width:300px;padding-top:20px;">
+                            <img src="https://i.pinimg.com/564x/ac/7c/78/ac7c78c77d569715cb14a771e8eb259a.jpg" height=400px;"/>
+                           <center><p class="box">1500</p></center> 
+                        </div></div>
+                        <div class="col-sm-3 parent" data-value="800">
+                            <div class="card" style="width:300px;padding-top:20px;">
+                                <img src="https://i.pinimg.com/564x/07/60/41/07604197612c9bf7db3efdd4e188b3b3.jpg" height=400px;"/>
+                               <center><p class="box">800</p></center> 
+                            </div></div>
+                            <div class="col-sm-3 parent" data-value="7000">
+                                <div class="card" style="width:300px;padding-top:20px;">
+                                    <img src="https://i.pinimg.com/564x/e7/dd/0c/e7dd0cd1fd5d2cae3d29d063a9e118b3.jpg" height=400px;"/>
+                                   <center><p class="box">700</p></center> 
+                                </div></div>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    subBtn=document.querySelector('.submit');
+    let dataValue=document.querySelectorAll('.parent');
+    dataValue.forEach(function(Items){
+        subBtn.addEventListener('click',function(){
+            let min=document.getElementById("minVal").value;
+            let max=document.getElementById("maxVal").value;
+        minPI=parseInt(min);
+        maxPI=parseInt(max);
+        let dataItems=Items.getAttribute('data-value');
+        if(dataItems>=minPI && dataItems<=maxPI){
+            Items.style.display="block";
+        
+        }    
+        else{
+            Items.style.display="none";
+        }   
+      })
+    })
+        </script>
+</body>
+</html>
